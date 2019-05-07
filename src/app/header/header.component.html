@@ -1,16 +1,29 @@
 <header class="header">
   <div class="header__content">
-    <div class="header__content__help"></div>
+    <div class="header__content__help">
+      <i class="fas fa-info"></i>
+      <span class="header__content__help--desktop">Como funciona</span>
+      <span class="header__content__help--mobile">Ajuda</span>
+    </div>
     <div class="header__content__main">
+      <div class="header__content__contact">
+        <!-- <i class="fab fa-whatsapp"></i> -->
+        <p class="header__content__contact__tell">0800 123 2222</p>
+        <p class="header__content__contact__description">Envie mensagem ou ligue</p>
+      </div>
       <img class="header__content__logo" src="../../assets/img/logo-quero.svg" alt="logo">
     </div>
-    <div class="header__content__account"></div>
+    <div class="header__content__account">
+      <span class="header__content__account__name">{{userName}}</span>
+      <i class="far fa-user-circle"></i>
+      <span class="header__content__account__label">Conta</span>
+    </div>
   </div>
-  <nav class="header__menu">
-    <ul class="header__menu__list">
-      <li class="header__menu__list__item"><a routerLink="/minha-conta">Minha conta</a></li>
-      <li class="header__menu__list__item"><a routerLink="/pre-matriculas">Pré-matrículas</a></li>
-      <li class="header__menu__list__item"><a routerLink="/bolsas-favoritas">Bolsas favoritas</a></li>
-    </ul>
-  </nav>
 </header>
+<nav class="header__menu">
+  <ul class="header__menu__list">
+    <li class="header__menu__list__item"><a routerLink="/minha-conta">Minha conta</a></li>
+    <li class="header__menu__list__item"><a routerLink="/pre-matriculas">Pré-matrículas</a></li>
+    <li class="header__menu__list__item"><a routerLink="/bolsas-favoritas">Bolsas favoritas</a></li>
+  </ul>
+</nav>
