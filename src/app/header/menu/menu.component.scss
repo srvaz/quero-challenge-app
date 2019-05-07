@@ -1,0 +1,67 @@
+@import'../../commons/var-space.scss';
+@import'../../commons/var-media-queries';
+@import'../../commons/var-colors';
+
+.menu {
+    color: $white;
+    background-color: $blue-primary;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .menu__list {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        .menu__list__item {
+            color: $white;
+            padding: $space-2;
+            transition-duration: .3s;
+
+            &:first-child {
+                font-weight: 700;
+            }
+
+            &:hover {
+                background-color: lighten($color: $blue-primary, $amount: 2.5);
+            }
+
+            &--active {
+                background-color: $blue-secondary;
+
+                &:hover {
+                    background-color: $blue-secondary;
+                }
+            }
+
+            &--desktop {
+                display: none;
+
+                @media (min-width: $screen-desktop-min) {
+                    display: block;
+                }
+            }
+
+            a {
+                color: $white;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .menu__trigger {
+        font-size: 16px;
+        font-weight: 700;
+        color: $white;
+        background-color: $blue-primary;
+        border: none;
+        outline: none;
+        padding: 0 $space-2;
+
+        @media (min-width: $screen-desktop-min) {
+            display: none;
+        }
+    }
+}
