@@ -1,0 +1,30 @@
+@import '../commons/var-space';
+@import '../commons/var-colors';
+
+.header {
+    background-color: $gray;
+    width: 100%;
+    padding: $space-3;
+    .header__content {
+        display: flex;
+
+        &__help {
+            flex: 1;
+        }
+        
+        &__main {
+            flex: 3;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        &__account {
+            flex: 1;
+        }
+
+        &__logo {
+            height: 50px;
+        }
+    }
+}
