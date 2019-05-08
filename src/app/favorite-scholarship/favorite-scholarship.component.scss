@@ -2,3 +2,207 @@
 @import '../commons//var-space.scss';
 @import '../commons/var-media-queries';
 @import '../commons/breadcrumb.scss';
+@import '../commons/half-filter';
+@import '../commons//buttons';
+
+.main-content {
+    margin-top: $space-5;
+
+    .main-content__title {
+        font-size: 32px;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    .main-content__description {
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    .half-filter {
+        margin: $space-4 0 $space-4 auto;
+    }
+}
+
+.scholarship {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    %card {
+        background-color: $white;
+        box-shadow: 0 2px 4px $shadow;
+        border-radius: 2px;
+        width: 100%;
+        min-height: 415px;
+        position: relative;
+        margin-bottom: $space-3;
+        cursor: pointer;
+        
+        @media (min-width: $screen-tablet-min) {
+            width: 250px;
+        }
+    }
+
+    .scholarship__btn {
+        @extend %card;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width: $screen-tablet-max) {
+            width: calc(100% - #{$space-3 * 2});
+            min-height: 100%;
+            padding: $space-3;
+        }
+        
+        i {
+            font-size: 32px;
+            color: $blue-primary;
+            text-align: center;
+            border: solid 4px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: table;
+
+            &::before {
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }
+
+        .scholarship__btn__text {
+            margin: $space-4 $space-3 0;
+            p {
+                text-align: center;
+                line-height: 1.5;
+                margin: 0;
+
+                &:first-child {
+                    font-size: 18px;
+                    font-weight: 700;
+                }
+
+                &:last-child {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    .scholarship__card {
+        @extend %card;
+
+        .scholarship__card__content {
+            margin: $space-3;
+        }
+
+        .scholarship__card__logo {
+            width: 150px;
+            display: block;
+            margin: auto;
+        }
+
+        .scholarship__card__header {
+            text-align: center;
+            border-bottom: solid 4px $gray;
+            padding-bottom: $space-2;
+
+            h2 {
+                font-size: 14px;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin: $space-3 0 $space-1;
+            }
+
+            p {
+                font-size: 14px;
+                font-weight: 700;
+                color: $blue-primary;
+                margin: 0 0 $space-2;
+            }
+        }
+
+        .scholarship__card__info {
+            border-bottom: solid 4px $gray;
+            padding: $space-2 0;
+
+            .scholarship__card__info__shift {
+                font-size: 14px;
+                font-weight: 700;
+                text-transform: uppercase;
+                text-align: center;
+                margin: 0 0 $space-2;
+            }
+
+            .scholarship__card__info__starts {
+                font-size: 12px;
+                text-align: center;
+                margin: 0;
+            }
+        }
+
+        .scholarship__card__price {
+            font-size: 12px;
+            text-align: center;
+            line-height: 1.6;
+            padding: $space-2 0;
+
+            .scholarship__card__price__status {
+                font-weight: 700;
+                text-align: center;
+                margin: 0 0 $space-1;
+            }
+
+            .scholarship__card__price__composition {
+                .price {
+                    text-align: center;
+                    margin: 0;
+
+                    &--full {
+                        font-size: 12px;
+                        text-decoration: line-through;
+                        margin: 0;
+                    }
+
+                    &--discount {
+                        font-size: 18px;
+                        font-weight: 700;
+                        color: $green;
+
+                        &::after {
+                            font-size: 12px;
+                            font-weight: normal;
+                            color: $black;
+                            margin-left: 4px;
+                            content: '/mês'
+                        }
+                    }
+                }
+            }
+        }
+
+        .scholarship__card__footer {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            bottom: 0;
+        }
+    }
+}
+
+.rating {
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+
+    .rating__stars {
+        color: $yellow-primary;
+        margin-left: $space-1;
+    }
+}

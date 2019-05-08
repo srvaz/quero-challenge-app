@@ -1,0 +1,31 @@
+.button {
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 4px;
+    display: block;
+    padding: $space-2 $space-3;
+
+    @media (min-width: $screen-desktop-min) {
+        padding: 6px 20px;
+    }
+
+    &--outlined {
+        color: $blue-primary;
+        background-color: $white;
+        border: solid 1px;
+
+        &:hover {
+            background-color: darken($color: $white, $amount: 2);
+        }
+    }
+    
+    &--solid {
+        color: $black;
+        background-color: $yellow-primary;
+        border: solid 1px $yellow-secondary;
+
+        &:hover {
+            background-color: darken($color: $yellow-primary, $amount: 4);
+        }
+    }
+}

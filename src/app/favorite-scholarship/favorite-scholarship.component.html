@@ -4,3 +4,69 @@
   <li class="breadcrumb__item"><a routerLink="/bolsas-favoritas">Bolsa favoritas</a></li>
 </ul>
 <a href="#" class="breadcrumb__last-page"><i class="fas fa-chevron-left"></i> Minha conta</a>
+<section class="main-content">
+  <h1 class="main-content__title">{{title}}</h1>
+  <p class="main-content__description">
+      {{description}}
+  </p>
+
+  <div class="half-filter">
+    <label class="half-filter__input">
+      <input type="radio" name="half" checked="checked">
+      <span class="half-filter__input--checked">Todos os semestres</span>
+    </label>
+    <label class="half-filter__input">
+      <input type="radio" name="half">
+      <span class="half-filter__input--checked">2º semestre de 2019</span>
+    </label>
+    <label class="half-filter__input">
+      <input type="radio" name="half">
+      <span class="half-filter__input--checked">1º semestre de 2020</span>
+    </label>
+  </div>
+
+  <div class="scholarship">
+    <div class="scholarship__btn">
+      <i class="fas fa-plus"></i>
+      <div class="scholarship__btn__text">
+        <p>Adicionar curso</p>
+        <p>Clique para adicionar bolsas de cursos do seu interesse</p>
+      </div>
+    </div>
+
+    <!-- <div class="scholarship__card">
+      <div class="scholarship__card__content">
+        <div class="scholarship__card__header">
+          <img src="https://www.tryimg.com/u/2019/04/16/anhembi-morumbi.png" alt="logo" class="scholarship__card__logo">
+          <h2>Unip</h2>
+          <p>Arquitetura e Urbanismo</p>
+          <div class="rating">
+            <span>3.8</span>
+            <div class="rating__stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <i class="far fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="scholarship__card__info">
+          <p class="scholarship__card__info__shift">PRESENCIAL • NOITE</p>
+          <p class="scholarship__card__info__starts">Início das aulas em: 05/07/2019</p>
+        </div>
+        <div class="scholarship__card__price">
+          <p class="scholarship__card__price__status">Mensalidade com o Quero Bolsa:</p>
+          <div class="scholarship__card__price__composition">
+            <p class="price price--full">R$ 1.487,31</p>
+            <p class="price price--discount">R$ 453,63</p>
+          </div>
+        </div>
+        <div class="scholarship__card__footer">
+          <button class="button button--outlined">Excluir</button>
+          <button class="button button--solid">Ver oferta</button>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</section>
