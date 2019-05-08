@@ -1,0 +1,20 @@
+.info-icon {
+    // icon border
+    text-align: center;
+    font-size: 14px;
+    border: solid 2px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: table;
+
+    // Font vertical align
+    &::before {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    @media(min-width: $screen-desktop-min) {
+        margin-right: $space-1;
+    }
+}
