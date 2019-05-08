@@ -1,9 +1,12 @@
 // This font is a free alternative for Proxima Nova
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500,700');
+@import './app/commons/var-colors.scss';
 
 * {
     font-family: 'Raleway', sans-serif;
 }
 body {
+    color: $black;
+    background-color: $gray;
     margin: 0;
 }
