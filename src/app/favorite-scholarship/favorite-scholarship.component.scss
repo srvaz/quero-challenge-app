@@ -22,3 +22,51 @@
         margin: $space-4 0 $space-4 auto;
     }
 }
+
+.scholarship {
+    .scholarship__btn {
+        background-color: $white;
+        box-shadow: 0 2px 4px $shadow;
+        max-width: 250px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        
+        i {
+            font-size: 32px;
+            color: $blue-primary;
+            text-align: center;
+            border: solid 4px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: table;
+
+            &::before {
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }
+
+        .scholarship__btn__text {
+            margin: $space-4 $space-3 0;
+            p {
+                text-align: center;
+                line-height: 1.5;
+                margin: 0;
+
+                &:first-child {
+                    font-size: 18px;
+                    font-weight: 700;
+                }
+
+                &:last-child {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
