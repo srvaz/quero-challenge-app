@@ -1,0 +1,17 @@
+@import './commons/var-space';
+@import './commons/var-media-queries';
+@import './commons/var-colors';
+
+main {
+    background-color: $gray;
+    max-width: 1000px;
+    height: 100vh;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    padding: $space-3 0;
+
+    @media (max-width: $screen-desktop-max) {
+        padding: $space-3 $space-2;
+    }
+}
