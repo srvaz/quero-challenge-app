@@ -1,0 +1,99 @@
+@import '../commons/var-space';
+@import '../commons/var-media-queries';
+@import '../commons/var-colors';
+@import '../commons/others';
+
+.footer {
+    background-color: $blue-primary;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+
+    @media (min-width: $screen-desktop-min) {
+        background-color: $blue-secondary;
+    }
+
+    .footer__contact {
+        max-width: 1000px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+
+        .footer__contact__items {
+            color: $white;
+            background-color: $blue-secondary;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            padding: $space-2;
+
+            @media (max-width: $screen-desktop-max) {
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            &:first-child {
+                @media (max-width: $screen-desktop-max) {
+                    width: 100%;
+                    flex: inherit;
+                    flex-direction: row;
+                    margin-bottom: 4px;
+                }
+                
+                .footer__contact__items__content {
+                    display: block;
+                }
+            }
+
+            &:nth-child(3) {
+                @media (max-width: $screen-desktop-max) {
+                    margin: 0 4px;
+                }
+            }
+
+            i {
+                font-size: 32px;
+                width: 36px;
+                height: 36px;
+                
+                @media (min-width: $screen-desktop-min) {
+                    margin-right: $space-2;
+                }
+            }
+
+            span {
+                font-weight: 500;
+                margin-top: $space-1;
+
+                @media (min-width: $screen-desktop-min) {
+                    display: none;
+                }                
+            }
+
+            .footer__contact__items__content {
+                @media (max-width: $screen-desktop-max) {
+                    display: none;
+                }
+
+                p {
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 1.5;
+                    margin: 0;
+    
+                    &:last-child {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer__msg {
+        font-size: 14px;
+        text-align: center;
+        color: $white;
+        background-color: $blue-primary;
+        padding: $space-5 0;
+    }
+}

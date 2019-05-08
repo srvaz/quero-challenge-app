@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { FavoriteScholarshipComponent } from './favorite-scholarship/favorite-scholarship.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './header/menu/menu.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { MenuComponent } from './header/menu/menu.component';
     FavoriteScholarshipComponent,
     HeaderComponent,
     MenuComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
