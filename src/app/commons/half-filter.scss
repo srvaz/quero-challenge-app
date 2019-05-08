@@ -1,0 +1,51 @@
+.half-filter {
+    width: 600px;
+    display: flex;
+    position: relative;
+
+    .half-filter__input {
+        background-color: $white;
+        flex: 1;
+        display: block;
+        position: relative;
+        cursor: pointer;
+        
+        input {
+            opacity: 0;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        &:first-child {
+            .half-filter__input--checked {
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+            }
+        }
+
+        &:last-child {
+            .half-filter__input--checked {
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+            }
+        }
+        
+        .half-filter__input--checked {
+            font-size: 14px;
+            font-weight: 700;
+            text-align: center;
+            color: $blue-secondary;
+            line-height: 1.8;
+            background-color: $white;
+            border: solid 1px $blue-secondary;
+            width: 100%;
+            height: $space-3;
+            position: absolute;
+        }
+        
+        input:checked + .half-filter__input--checked {
+            color: $white;
+            background-color: $blue-secondary;
+        }
+    }
+}

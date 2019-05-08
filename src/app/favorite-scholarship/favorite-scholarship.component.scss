@@ -2,3 +2,23 @@
 @import '../commons//var-space.scss';
 @import '../commons/var-media-queries';
 @import '../commons/breadcrumb.scss';
+@import '../commons/half-filter';
+
+.main-content {
+    margin-top: $space-5;
+
+    .main-content__title {
+        font-size: 32px;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    .main-content__description {
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    .half-filter {
+        margin: $space-4 0 $space-4 auto;
+    }
+}

@@ -4,3 +4,24 @@
   <li class="breadcrumb__item"><a routerLink="/bolsas-favoritas">Bolsa favoritas</a></li>
 </ul>
 <a href="#" class="breadcrumb__last-page"><i class="fas fa-chevron-left"></i> Minha conta</a>
+<section class="main-content">
+  <h1 class="main-content__title">{{title}}</h1>
+  <p class="main-content__description">
+      {{description}}
+  </p>
+
+  <div class="half-filter">
+    <label class="half-filter__input">
+      <input type="radio" name="half" checked="checked">
+      <span class="half-filter__input--checked">Todos os semestres</span>
+    </label>
+    <label class="half-filter__input">
+      <input type="radio" name="half">
+      <span class="half-filter__input--checked">2º semestre de 2019</span>
+    </label>
+    <label class="half-filter__input">
+      <input type="radio" name="half">
+      <span class="half-filter__input--checked">1º semestre de 2020</span>
+    </label>
+  </div>
+</section>
