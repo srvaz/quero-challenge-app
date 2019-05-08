@@ -6,8 +6,17 @@
     color: $white;
     background-color: $blue-primary;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    
+    .menu__content {
+        max-width: 1000px;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+
+        @media (max-width: $screen-desktop-max) {
+            padding: 0 $space-2;
+        }
+    }
 
     .menu__list {
         display: flex;
@@ -22,6 +31,7 @@
 
             &:first-child {
                 font-weight: 700;
+                padding-left: 0;
             }
 
             &:hover {
@@ -58,7 +68,6 @@
         background-color: $blue-primary;
         border: none;
         outline: none;
-        padding: 0 $space-2;
 
         @media (min-width: $screen-desktop-min) {
             display: none;
