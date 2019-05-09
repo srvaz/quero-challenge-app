@@ -28,7 +28,6 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 
     %card {
         background-color: $white;
@@ -37,10 +36,11 @@
         width: 100%;
         min-height: 415px;
         position: relative;
-        margin-bottom: $space-3;
+        margin: 0 auto $space-3;
         cursor: pointer;
         
         @media (min-width: $screen-tablet-min) {
+            margin: 0 $space-3 $space-3 0;
             width: 250px;
         }
     }
@@ -51,6 +51,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-left: 0;
 
         @media (max-width: $screen-tablet-max) {
             width: calc(100% - #{$space-3 * 2});
@@ -102,7 +103,9 @@
 
         .scholarship__card__logo {
             width: 150px;
+            height: 30px;
             display: block;
+            object-fit: contain;
             margin: auto;
         }
 

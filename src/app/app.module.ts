@@ -8,6 +8,7 @@ import { FavoriteScholarshipComponent } from './favorite-scholarship/favorite-sc
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './header/menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
+import { ModalSearchComponent } from './modal-search/modal-search.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     MenuComponent,
     FooterComponent,
+    ModalSearchComponent,
   ],
   imports: [
     BrowserModule,

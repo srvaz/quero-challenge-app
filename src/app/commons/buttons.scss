@@ -28,4 +28,9 @@
             background-color: darken($color: $yellow-primary, $amount: 4);
         }
     }
+
+    &--disable {
+        color: #ccc;
+        background-color: $gray;
+    }
 }
