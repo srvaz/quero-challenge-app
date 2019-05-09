@@ -1,0 +1,174 @@
+@import '../commons/var-colors';
+@import '../commons//var-space.scss';
+@import '../commons/var-media-queries';
+@import '../commons/breadcrumb.scss';
+@import '../commons//buttons';
+
+.overlay {
+    background-color: $overlay;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow-y: auto;
+    
+    @media (min-width: $screen-desktop-min) {
+        align-items: center;
+    }
+}
+
+.modal-search {
+    background-color: $white;
+    width: 100%;
+    position: absolute;
+    top: $space-10;
+
+    @media (min-width: $screen-desktop-min) {
+        width: 600px;
+        height: 700px;
+    }
+
+    i {
+        font-size: 26px;
+        color: $white;
+        position: absolute;
+        top: -$space-6;
+        right: $space-3;
+        
+        @media (min-width: $screen-desktop-min) {
+            top: -$space-5;
+            right: 0;
+        }
+    }
+
+    .modal-search__wrapper {
+        margin: $space-4;
+    }
+
+    &__title {
+        font-size: 26px;
+        margin: 0 0 $space-1;
+    }
+
+    &__description {
+        font-size: 14px;
+        margin: 0;
+    }
+
+    &__header {
+        margin-bottom: $space-5;
+    }
+
+    &__filter {
+        display: flex;
+        flex-wrap: wrap;
+
+        &__area {
+            width: 100%;
+            margin-bottom: $space-2;
+            display: flex;
+            flex-direction: column;
+            
+            @media (min-width: $screen-tablet-min) {
+                width: calc(50% - #{$space-1});
+
+                &:nth-child(odd) {
+                    padding-right: $space-1;
+                }
+    
+                &:nth-child(even) {
+                    padding-left: $space-1;
+                }
+            }
+            
+
+            label {
+                font-size: 12px;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    &__results {
+        font-size: 14px;
+        font-weight: 700;
+        width: 100%;
+        height: 100%;
+
+        &__header {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        &__content {
+            height: 340px;
+            overflow-y: auto;
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li.scholarship {
+                    border-top: solid 4px $gray;
+                    display: flex;
+                    align-items: center;
+                    padding: $space-2 0;
+
+                    &:last-child {
+                        border-bottom: solid 4px $gray;
+                    }
+
+                    .scholarship__text--green {
+                        color: $green;
+                        font-weight: 700;
+                    }
+
+                    img {
+                        width: 100px;
+                        height: 40px;
+                        object-fit: contain;
+                        margin: 0 $space-3;
+                    }
+
+                    p {
+                        font-size: 14px;
+                        font-weight: 500;
+                        line-height: 1.5;
+                        margin: 0;
+                    }
+
+                    .scholarship__course {
+                        font-weight: 700;
+                        color: $blue-primary;
+                    }
+
+                    .scholarship__level {
+                        font-size: 12px;
+                    }
+
+                    .scholarship__price-comp {
+                        margin: auto;
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: $space-3;
+
+        .button--outlined {
+            margin-right: $space-1;
+        }
+    }
+}

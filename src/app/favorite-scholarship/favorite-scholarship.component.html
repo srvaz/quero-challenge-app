@@ -5,28 +5,28 @@
 </ul>
 <a href="#" class="breadcrumb__last-page"><i class="fas fa-chevron-left"></i> Minha conta</a>
 <section class="main-content">
-  <h1 class="main-content__title">{{title}}</h1>
+  <h1 class="main-content__title">{{TITLE}}</h1>
   <p class="main-content__description">
-      {{description}}
+      {{DESC}}
   </p>
 
   <div class="half-filter">
     <label class="half-filter__input">
-      <input type="radio" name="half" checked="checked">
+      <input type="radio" name="half" checked="checked" value="" #all (change)="filterHalf(all.value)">
       <span class="half-filter__input--checked">Todos os semestres</span>
     </label>
     <label class="half-filter__input">
-      <input type="radio" name="half">
+      <input type="radio" name="half" value="2019.2" #ft (change)="filterHalf(ft.value)">
       <span class="half-filter__input--checked">2º semestre de 2019</span>
     </label>
     <label class="half-filter__input">
-      <input type="radio" name="half">
+      <input type="radio" name="half" value="2020.1" #sc (change)="filterHalf(sc.value)">
       <span class="half-filter__input--checked">1º semestre de 2020</span>
     </label>
   </div>
 
   <div class="scholarship">
-    <div class="scholarship__btn">
+    <div class="scholarship__btn" (click)="triggerModal()">
       <i class="fas fa-plus"></i>
       <div class="scholarship__btn__text">
         <p>Adicionar curso</p>
@@ -34,39 +34,44 @@
       </div>
     </div>
 
-    <!-- <div class="scholarship__card">
+    <div *ngFor="let item of result; let i = index" class="scholarship__card">
       <div class="scholarship__card__content">
         <div class="scholarship__card__header">
-          <img src="https://www.tryimg.com/u/2019/04/16/anhembi-morumbi.png" alt="logo" class="scholarship__card__logo">
-          <h2>Unip</h2>
-          <p>Arquitetura e Urbanismo</p>
+          <img [src]="item.university.logo_url" [alt]="item.university.logo_url" class="scholarship__card__logo">
+          <h2>{{item.university.name}}</h2>
+          <p>{{item.course.name}}</p>
           <div class="rating">
-            <span>3.8</span>
+            <span>{{item.university.score}}</span>
             <div class="rating__stars">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
+              <i class="fas star-half-alt"></i>
               <i class="far fa-star"></i>
             </div>
           </div>
         </div>
         <div class="scholarship__card__info">
-          <p class="scholarship__card__info__shift">PRESENCIAL • NOITE</p>
-          <p class="scholarship__card__info__starts">Início das aulas em: 05/07/2019</p>
+          <p class="scholarship__card__info__shift">{{item.course.kind}} • {{item.course.shift}}</p>
+          <p class="scholarship__card__info__starts">Início das aulas em: {{item.start_date}}</p>
         </div>
-        <div class="scholarship__card__price">
+        <div class="scholarship__card__price" *ngIf="item.enabled">
           <p class="scholarship__card__price__status">Mensalidade com o Quero Bolsa:</p>
           <div class="scholarship__card__price__composition">
-            <p class="price price--full">R$ 1.487,31</p>
-            <p class="price price--discount">R$ 453,63</p>
+            <p class="price price--full">R$ {{item.full_price}}</p>
+            <p class="price price--discount">R$ {{item.price_with_discount}}</p>
           </div>
         </div>
+        <div class="scholarship__card__price" *ngIf="item.enabled === false">
+          <p class="scholarship__card__price__status">Bolsa indisponível.</p>
+          <p>Entre em contato com nosso atendimento para saber mais.</p>
+        </div>
         <div class="scholarship__card__footer">
-          <button class="button button--outlined">Excluir</button>
-          <button class="button button--solid">Ver oferta</button>
+          <button class="button button--outlined" (click)="deleteScholarShip(i)">Excluir</button>
+          <button [className]="item.enabled ? 'button button--solid' : 'button button--disable'">Ver oferta</button>
         </div>
       </div>
-    </div> -->
+    </div>
   </div>
+  <app-modal-search [status]="isModalVisible" (statusResponse)="reciverFeedback($event)"></app-modal-search>
 </section>

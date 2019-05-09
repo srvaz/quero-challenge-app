@@ -1,0 +1,80 @@
+<div class="overlay" *ngIf="status">
+  <form class="modal-search" (submit)="saveScholarShip($event)">
+    <i class="fas fa-times" (click)="triggerModal()"></i>
+    <div class="modal-search__wrapper">
+      <header class="modal-search__header">
+        <h2 class="modal-search__title">Adicionar bolsa</h2>
+        <p class="modal-search__description">Filtre e adicione as bolsas de seu interesse</p>
+      </header>
+      <div class="modal-search__filter">
+        <div class="modal-search__filter__area">
+          <label for="">SELECIONE SUA CIDADE</label>
+          <select name="city" #cityName (change)="handlerFilter(cityName.value, course.value, price.value, pre, ead)">
+            <option value="" selected disabled>Selecione uma cidade</option>
+            <option [value]="item" *ngFor="let item of dataFilter.city">
+              {{item}}
+            </option>
+          </select>
+        </div>
+        <div class="modal-search__filter__area">
+          <label for="">SELECIONE O CURSO DE SUA PREFERÊNCIA</label>
+          <select name="course" #course (change)="handlerFilter(cityName.value, course.value, price.value, pre, ead)">
+            <option value="" selected disabled>Selecione uma cidade</option>
+            <option [value]="item" *ngFor="let item of dataFilter.course">
+              {{item}}
+            </option>
+          </select>
+        </div>
+        <div class="modal-search__filter__area">
+          <label for="">COMO VOCÊ QUER ESTUDAR?</label>
+          <div>
+            <input type="checkbox" name="kind"
+              value="presencial"
+              checked="checked"
+              #pre (click)="handlerFilter(cityName.value, course.value, price.value, pre, ead)">Presencial
+            <input type="checkbox" name="kind"
+            value="distancia"
+            checked="checked"
+            #ead (click)="handlerFilter(cityName.value, course.value, price.value, pre, ead)">A distância
+          </div>
+        </div>
+        <div class="modal-search__filter__area">
+          <label for="">ATÉ QUANTO PODE PAGAR?</label>
+          <span>{{dataFilter.price}}</span>
+          <input type="range" name="price" min="100" max="10000" step="100" #price (change)="handlerFilter(cityName.value, course.value, price.value, pre, ead)">
+        </div>
+      </div>
+      <main class="modal-search__results">
+        <div class="modal-search__results__header">
+          <p>Resultado:</p>
+          <div>
+            <label for="">Ordenar por</label>
+            <select name="order" id="">
+              <option value="-1">Nome da Faculdade</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-search__results__content">
+          <ul>
+            <li *ngFor="let scholarship of result" class="scholarship">
+              <input type="checkbox" name="scholarship" id="" (click)="validateForm()">
+              <img [src]="scholarship.university.logo_url" alt="scholarship.university.name">
+              <div>
+                <p class="scholarship__course">{{scholarship.course.name}}</p>
+                <p class="scholarship__level">{{scholarship.course.level}}</p>
+              </div>
+              <div class="scholarship__price-comp">
+                <p>Bolsa de <span class="scholarship__text--green">{{scholarship.discount_percentage}}%</span></p>
+                <p class="scholarship__text--green">{{scholarship.price_with_discount}}/mês</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </main>
+      <footer class="modal-search__footer">
+        <button class="button button--outlined" (click)="triggerModal()">Cancelar</button>
+        <button [className]="formIsValid ? 'button button--solid' : 'button button--disable'" [disabled]="!formIsValid" type="submit">Adicionar bolsa(s)</button>
+      </footer>
+    </div>
+  </form>
+</div>
